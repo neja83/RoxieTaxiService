@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD7D0DCE27EF0B7B00B52402 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */; };
 		AD98A17327EDEFF900856FB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A17227EDEFF900856FB6 /* AppDelegate.swift */; };
 		AD98A17527EDEFF900856FB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A17427EDEFF900856FB6 /* SceneDelegate.swift */; };
 		AD98A17727EDEFF900856FB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A17627EDEFF900856FB6 /* ViewController.swift */; };
 		AD98A17A27EDEFF900856FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD98A17827EDEFF900856FB6 /* Main.storyboard */; };
 		AD98A17C27EDEFFB00856FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD98A17B27EDEFFB00856FB6 /* Assets.xcassets */; };
 		AD98A17F27EDEFFB00856FB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD98A17D27EDEFFB00856FB6 /* LaunchScreen.storyboard */; };
+		AD98A18827EDF11000856FB6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A18727EDF11000856FB6 /* Service.swift */; };
+		AD98A18A27EDF37600856FB6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A18927EDF37600856FB6 /* NetworkManager.swift */; };
+		AD98A18C27EDF44000856FB6 /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A18B27EDF44000856FB6 /* Contract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		AD98A16F27EDEFF900856FB6 /* RoxieTaxiService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoxieTaxiService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD98A17227EDEFF900856FB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD98A17427EDEFF900856FB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		AD98A17B27EDEFFB00856FB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD98A17E27EDEFFB00856FB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD98A18027EDEFFB00856FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD98A18727EDF11000856FB6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		AD98A18927EDF37600856FB6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD98A18B27EDF44000856FB6 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		AD98A17127EDEFF900856FB6 /* RoxieTaxiService */ = {
 			isa = PBXGroup;
 			children = (
+				ADD176F127EF7D52007F58BF /* service */,
+				AD98A18627EDF10400856FB6 /* models */,
 				AD98A17227EDEFF900856FB6 /* AppDelegate.swift */,
 				AD98A17427EDEFF900856FB6 /* SceneDelegate.swift */,
 				AD98A17627EDEFF900856FB6 /* ViewController.swift */,
@@ -65,6 +75,24 @@
 				AD98A18027EDEFFB00856FB6 /* Info.plist */,
 			);
 			path = RoxieTaxiService;
+			sourceTree = "<group>";
+		};
+		AD98A18627EDF10400856FB6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AD98A18727EDF11000856FB6 /* Service.swift */,
+				AD98A18927EDF37600856FB6 /* NetworkManager.swift */,
+				AD98A18B27EDF44000856FB6 /* Contract.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		ADD176F127EF7D52007F58BF /* service */ = {
+			isa = PBXGroup;
+			children = (
+				AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD98A17727EDEFF900856FB6 /* ViewController.swift in Sources */,
+				AD98A18827EDF11000856FB6 /* Service.swift in Sources */,
+				AD7D0DCE27EF0B7B00B52402 /* DataParser.swift in Sources */,
+				AD98A18A27EDF37600856FB6 /* NetworkManager.swift in Sources */,
+				AD98A18C27EDF44000856FB6 /* Contract.swift in Sources */,
 				AD98A17327EDEFF900856FB6 /* AppDelegate.swift in Sources */,
 				AD98A17527EDEFF900856FB6 /* SceneDelegate.swift in Sources */,
 			);
