@@ -11,6 +11,7 @@ class ActiveContractList: UIViewController {
     
     // MARK: - private
     @IBOutlet weak var tableView: UITableView!
+    
     private let cellID: String = "activeContractService"
     private var service: Service = TaxiService()
     private var list: [ActiveContract] = []
@@ -23,7 +24,6 @@ class ActiveContractList: UIViewController {
         setupNavigationBar()
         
         updateList()
-        
     }
     
     private func setupNavigationBar() {
@@ -63,20 +63,26 @@ extension ActiveContractList: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = list[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! ActiveContractCell
+      
+        cell.amount.text = "\(model.price.amount/100),\(model.price.amount%100)"
+        cell.currency.text = model.price.currency
+        cell.fromCity.text = model.startAddress.city
+        cell.fromAddress.text = model.startAddress.address
+        cell.toCity.text = model.endAddress.city
+        cell.toAddress.text = model.endAddress.address
         
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
-        }
-        
-        cell!.textLabel?.text = String("\(model.id)")
-        
-        return cell!
+        return cell
     }
     
 }
 
 extension ActiveContractList: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        166
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let model = list[indexPath.row]

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6DCFB027F0713000480C8F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DCFAF27F0713000480C8F /* ImageCache.swift */; };
+		AD6DCFB727F0A54500480C8F /* ActiveContractCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DCFB627F0A54500480C8F /* ActiveContractCell.swift */; };
+		AD6DCFB927F0AE1100480C8F /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DCFB827F0AE1100480C8F /* DateParser.swift */; };
 		AD7D0DCE27EF0B7B00B52402 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */; };
 		AD98A17327EDEFF900856FB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A17227EDEFF900856FB6 /* AppDelegate.swift */; };
 		AD98A17527EDEFF900856FB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98A17427EDEFF900856FB6 /* SceneDelegate.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD6DCFAF27F0713000480C8F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		AD6DCFB627F0A54500480C8F /* ActiveContractCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveContractCell.swift; sourceTree = "<group>"; };
+		AD6DCFB827F0AE1100480C8F /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		AD98A16F27EDEFF900856FB6 /* RoxieTaxiService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoxieTaxiService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD98A17227EDEFF900856FB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				AD7D0DCD27EF0B7A00B52402 /* DataParser.swift */,
+				AD6DCFAF27F0713000480C8F /* ImageCache.swift */,
+				AD6DCFB827F0AE1100480C8F /* DateParser.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -102,6 +110,7 @@
 			children = (
 				AD98A17627EDEFF900856FB6 /* ActiveContractList.swift */,
 				ADD176F327EFBBE4007F58BF /* DetailActiveContract.swift */,
+				AD6DCFB627F0A54500480C8F /* ActiveContractCell.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -180,9 +189,12 @@
 				AD98A17727EDEFF900856FB6 /* ActiveContractList.swift in Sources */,
 				AD98A18827EDF11000856FB6 /* Service.swift in Sources */,
 				ADD176F427EFBBE4007F58BF /* DetailActiveContract.swift in Sources */,
+				AD6DCFB027F0713000480C8F /* ImageCache.swift in Sources */,
+				AD6DCFB927F0AE1100480C8F /* DateParser.swift in Sources */,
 				AD7D0DCE27EF0B7B00B52402 /* DataParser.swift in Sources */,
 				AD98A18A27EDF37600856FB6 /* NetworkManager.swift in Sources */,
 				AD98A18C27EDF44000856FB6 /* Contract.swift in Sources */,
+				AD6DCFB727F0A54500480C8F /* ActiveContractCell.swift in Sources */,
 				AD98A17327EDEFF900856FB6 /* AppDelegate.swift in Sources */,
 				AD98A17527EDEFF900856FB6 /* SceneDelegate.swift in Sources */,
 			);

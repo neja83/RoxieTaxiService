@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - protocol
 protocol NetworkManager {
     var baseUrl: URL { get }
+    var imageCache: Cache? { get }
     func request(completion: @escaping ([Contract]?, Error?) -> Void )
+    func photoRequest(name: String, completion: @escaping (UIImage?, Error?) -> Void)
 }
 
 // MARK: - implementation
@@ -18,6 +21,7 @@ final class ServiceNetworkManager: NetworkManager {
     
     // MARK: - Types
     typealias action = ([Contract]?, Error?) -> Void
+    typealias action2 = (UIImage?, Error?) -> Void
     
     // MARK: - private
     private let session = URLSession.shared
@@ -28,6 +32,8 @@ final class ServiceNetworkManager: NetworkManager {
         }
         return url
     }
+    
+    var imageCache: Cache?
     
     func request(completion: @escaping action) {
         let session = URLSession.shared
@@ -47,6 +53,25 @@ final class ServiceNetworkManager: NetworkManager {
             }
             
         }
+        task.resume()
+    }
+    
+    func photoRequest(name: String, completion: @escaping action2) {
+        guard let url = URL(string: "https://www.roxiemobile.ru/careers/test/images/\(name)") else { fatalError() }
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(nil, NetworkManagerErorrs.RequestExeption(message: error.localizedDescription))
+            }
+            
+            if let data = data, let image = UIImage(data: data) {
+                completion(image, nil)
+            } else {
+                completion(nil, NetworkManagerErorrs.DataExeption(message: "UIImage create exeption"))
+            }
+        }
+        
         task.resume()
     }
     
