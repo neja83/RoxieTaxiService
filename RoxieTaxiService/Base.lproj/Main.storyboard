@@ -22,30 +22,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="activeContractService" rowHeight="160" id="1C8-HJ-1AD" customClass="ActiveContractCell" customModule="RoxieTaxiService" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="activeContractService" rowHeight="160" id="1C8-HJ-1AD" customClass="ActiveContractCell" customModule="RoxieTaxiService" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1C8-HJ-1AD" id="6m6-gM-Kv2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYj-NS-W8f">
-                                                    <rect key="frame" x="16" y="8" width="382" height="48"/>
+                                                    <rect key="frame" x="16" y="8" width="353.5" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт-Петербург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLh-j2-sWf">
-                                                            <rect key="frame" x="48" y="5" width="318" height="18"/>
+                                                            <rect key="frame" x="48" y="5" width="289.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" systemColor="systemBlueColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пр. Ленина, д. 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pr7-uH-RH1">
-                                                            <rect key="frame" x="48" y="25" width="318" height="18"/>
+                                                            <rect key="frame" x="48" y="25" width="289.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tO9-9C-Lud">
                                                             <rect key="frame" x="8" y="14" width="24" height="19.5"/>
+                                                            <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="Dll-Tm-Pl2"/>
                                                                 <constraint firstAttribute="width" constant="24" id="mfz-nm-gdW"/>
@@ -67,10 +67,11 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBx-1s-ERW">
-                                                    <rect key="frame" x="16" y="64" width="382" height="48"/>
+                                                    <rect key="frame" x="16" y="64" width="353.5" height="48"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-Dh-dSC">
                                                             <rect key="frame" x="8" y="13.5" width="24" height="21"/>
+                                                            <color key="tintColor" systemColor="systemCyanColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="eIM-oA-9uq"/>
                                                                 <constraint firstAttribute="width" constant="24" id="xAa-0H-2do"/>
@@ -78,13 +79,12 @@
                                                             <imageReference key="image" image="mappin.and.ellipse" catalog="system" symbolScale="small" renderingMode="template"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт-Петербург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzl-lq-6Mo">
-                                                            <rect key="frame" x="48" y="5" width="318" height="18"/>
+                                                            <rect key="frame" x="48" y="5" width="289.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" systemColor="systemBlueColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пр. Невский, д. 126" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upJ-YR-FHd">
-                                                            <rect key="frame" x="48" y="25" width="318" height="18"/>
+                                                            <rect key="frame" x="48" y="25" width="289.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -104,23 +104,23 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztH-1r-zf0">
-                                                    <rect key="frame" x="16" y="120" width="382" height="32"/>
+                                                    <rect key="frame" x="16" y="120" width="353.5" height="32"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="руб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCd-3x-Jt7">
-                                                            <rect key="frame" x="346" y="6.5" width="28" height="19.5"/>
+                                                            <rect key="frame" x="317.5" y="6.5" width="28" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="455" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-gm-u0e">
-                                                            <rect key="frame" x="308.5" y="6.5" width="29.5" height="19.5"/>
+                                                            <rect key="frame" x="280" y="6.5" width="29.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость поездки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvP-wq-83B">
-                                                            <rect key="frame" x="16" y="7" width="140" height="18"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                            <rect key="frame" x="16" y="7" width="144.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -234,7 +234,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт-Петербург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-t1-b0c">
                                         <rect key="frame" x="48" y="5" width="318" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пр. Ленина, д. 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWs-CN-r4u">
@@ -245,6 +244,7 @@
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-8R-uS7">
                                         <rect key="frame" x="8" y="14" width="24" height="19.5"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="XXy-dj-ueM"/>
                                             <constraint firstAttribute="height" constant="24" id="pDP-zi-ZUt"/>
@@ -270,6 +270,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTz-24-YrT">
                                         <rect key="frame" x="8" y="13.5" width="24" height="21"/>
+                                        <color key="tintColor" systemColor="systemCyanColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="MQZ-33-1i6"/>
                                             <constraint firstAttribute="width" constant="24" id="sMN-Il-3aF"/>
@@ -279,7 +280,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт-Петербург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I1-Ar-PR3">
                                         <rect key="frame" x="48" y="5" width="318" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пр. Невский, д. 126" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-Pg-1oY">
@@ -404,7 +404,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванов Иван Иванович" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiW-Gi-j3Z">
                                         <rect key="frame" x="84" y="16" width="298" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -486,11 +486,14 @@
     <resources>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="target" catalog="system" width="128" height="121"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
