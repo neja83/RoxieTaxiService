@@ -27,6 +27,7 @@ class ActiveContractList: UIViewController {
         updateList()
     }
     
+    // MARK: - methods
     private func setupNavigationBar() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
@@ -35,7 +36,7 @@ class ActiveContractList: UIViewController {
     private func updateList() {
         service.getList { [weak self] data, error in
             if let data = data as? [ActiveContract] {
-                self?.list.append(contentsOf: data)
+                self?.list.append(contentsOf: self?.sortByDate(data: data) ?? [] )
                 self?.tableView.reloadData()
             }
             if let error = error {
@@ -48,6 +49,16 @@ class ActiveContractList: UIViewController {
         print(message)
     }
     
+    /**
+     - Returns: sorted list by orderTime
+     */
+    private func sortByDate(data: [ActiveContract]) -> [ActiveContract] {
+        data.sorted {
+            let formatterDate = ISO8601DateFormatter()
+            return formatterDate.date(from: $0.orderTime)! < formatterDate.date(from: $1.orderTime)!
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier ==  "detailIdentifier", let activeContract = sender as? ActiveContract {
@@ -58,6 +69,7 @@ class ActiveContractList: UIViewController {
 }
 
 extension ActiveContractList: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         list.count
     }
