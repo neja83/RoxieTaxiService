@@ -80,7 +80,7 @@ extension ActiveContractList: UITableViewDataSource {
 extension ActiveContractList: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        166
+        140
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
