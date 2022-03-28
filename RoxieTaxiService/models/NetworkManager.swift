@@ -11,7 +11,6 @@ import UIKit
 // MARK: - protocol
 protocol NetworkManager {
     var baseUrl: URL { get }
-    var imageCache: Cache? { get }
     func request(completion: @escaping ([Contract]?, Error?) -> Void )
     func photoRequest(name: String, completion: @escaping (UIImage?, Error?) -> Void)
 }
@@ -32,8 +31,6 @@ final class ServiceNetworkManager: NetworkManager {
         }
         return url
     }
-    
-    var imageCache: Cache?
     
     func request(completion: @escaping action) {
         let session = URLSession.shared

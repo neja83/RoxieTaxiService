@@ -26,7 +26,7 @@ class DetailActiveContract: UIViewController {
     @IBOutlet weak var toCity: UILabel!
     @IBOutlet weak var toAddress: UILabel!
     
-    private var service: Service = TaxiService()
+    private var service: Service = TaxiService.share
     
     var activeContract: ActiveContract!
     

@@ -20,11 +20,16 @@ protocol Service {
 // MARK: - implementation
 final class TaxiService: Service {
     
+    static let share: TaxiService = TaxiService()
+    
     var name: String = "Активные заказы"
     
     typealias action = ([Contract]?, Error?) -> Void
     
     private var network: NetworkManager = ServiceNetworkManager()
+    private var imageCache = ImageCache<String, UIImage>()
+    
+    private init(){ }
     
     func getList(completion : @escaping action) {
         
@@ -45,16 +50,25 @@ final class TaxiService: Service {
     func getPhoto(by name: String, completion: @escaping (UIImage?, Error?) -> Void ) {
         
         DispatchQueue.global().async {
-            self.network.photoRequest(name: name) { image, error in
+            
+            self.network.photoRequest(name: name) { [weak self] image, error in
                 DispatchQueue.main.async {
-                    if image != nil {
-                        completion(image, nil)
+                    
+                    if let image = image {
+                        if let cached = self?.imageCache[name] {
+                            completion(cached, nil)
+                        } else  {
+                            self?.imageCache[name] = image
+                            completion(image, nil)
+                        }
                     }
                     if error != nil {
                         completion(nil, error)
                     }
+                    
                 }
             }
+            
         }
     }
 }

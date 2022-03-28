@@ -13,7 +13,7 @@ class ActiveContractList: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let cellID: String = "activeContractService"
-    private var service: Service = TaxiService()
+    private var service: Service = TaxiService.share
     private var list: [ActiveContract] = []
 
     // MARK: - override
