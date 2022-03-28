@@ -12,12 +12,15 @@ import UIKit
 
 // MARK: - protocols
 protocol Service {
+    var name: String { get }
     func getList(completion: @escaping ([Contract]?, Error?) -> Void)
     func getPhoto(by name: String, completion: @escaping (UIImage?, Error?) -> Void )
 }
 
 // MARK: - implementation
 final class TaxiService: Service {
+    
+    var name: String = "Активные заказы"
     
     typealias action = ([Contract]?, Error?) -> Void
     

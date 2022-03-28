@@ -19,6 +19,7 @@ class ActiveContractList: UIViewController {
     // MARK: - override
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = service.name
         tableView.dataSource = self
         tableView.delegate   = self
         setupNavigationBar()
