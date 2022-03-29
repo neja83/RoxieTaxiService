@@ -46,7 +46,14 @@ class ActiveContractList: UIViewController {
     }
         
     private func showMessage(with message: String) {
-        print(message)
+        // create the alert
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     /**
