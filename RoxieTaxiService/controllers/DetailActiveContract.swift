@@ -45,7 +45,7 @@ class DetailActiveContract: UIViewController {
         
         orderTime.text = DateParser.change(srt: activeContract.orderTime, inFormat: .dayMonthYearTime)
         amount.text = "\(activeContract.price.amount/100),\(activeContract.price.amount%100)"
-        currency.text = activeContract.price.currency
+        currency.text = Currency.convert(from: activeContract.price.currency)
         
         fromCity.text = activeContract.startAddress.city
         fromAddress.text = activeContract.startAddress.address

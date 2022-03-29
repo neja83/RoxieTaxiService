@@ -86,7 +86,7 @@ extension ActiveContractList: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! ActiveContractCell
       
         cell.amount.text = "\(model.price.amount/100),\(model.price.amount%100)"
-        cell.currency.text = model.price.currency
+        cell.currency.text = Currency.convert(from: model.price.currency)
         cell.fromCity.text = model.startAddress.city
         cell.fromAddress.text = model.startAddress.address
         cell.toCity.text = model.endAddress.city
