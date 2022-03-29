@@ -127,6 +127,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="8Sx-V1-0WD"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kCd-3x-Jt7" secondAttribute="trailing" constant="20" symbolic="YES" id="QyJ-0j-ygP"/>
                                                         <constraint firstItem="kCd-3x-Jt7" firstAttribute="centerY" secondItem="ztH-1r-zf0" secondAttribute="centerY" id="SAT-DX-LAt"/>
                                                         <constraint firstItem="kCd-3x-Jt7" firstAttribute="leading" secondItem="sCt-gm-u0e" secondAttribute="trailing" constant="8" id="Uq6-TX-Ift"/>
                                                         <constraint firstItem="sCt-gm-u0e" firstAttribute="leading" secondItem="ztH-1r-zf0" secondAttribute="leading" constant="48" id="f8Y-ui-N65"/>
@@ -219,6 +220,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="tnj-FY-kYF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ut-5p-Oaj" secondAttribute="trailing" constant="8" symbolic="YES" id="CET-Vn-khW"/>
                                     <constraint firstItem="sGb-MH-ObZ" firstAttribute="centerY" secondItem="csq-hQ-YC1" secondAttribute="centerY" id="IIQ-4t-ugu"/>
                                     <constraint firstAttribute="trailing" secondItem="sGb-MH-ObZ" secondAttribute="trailing" constant="8" id="UGn-Nx-aG9"/>
                                     <constraint firstItem="0ut-5p-Oaj" firstAttribute="leading" secondItem="csq-hQ-YC1" secondAttribute="leading" id="XGs-FZ-he1"/>
@@ -340,8 +342,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-51-Luu">
-                                        <rect key="frame" x="8" y="84" width="230" height="37"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-51-Luu">
+                                        <rect key="frame" x="8" y="83" width="230" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzz-Te-SJG">
                                                 <rect key="frame" x="0.0" y="8" width="230" height="21"/>

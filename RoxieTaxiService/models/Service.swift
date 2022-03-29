@@ -13,8 +13,8 @@ import UIKit
 // MARK: - protocols
 protocol Service {
     var name: String { get }
-    func getList(completion: @escaping ([Contract]?, Error?) -> Void)
-    func getPhoto(by name: String, completion: @escaping (UIImage?, Error?) -> Void )
+    func getList(completion: @escaping ([Contract]?, String?) -> Void)
+    func getPhoto(by name: String, completion: @escaping (UIImage?, String?) -> Void )
 }
 
 // MARK: - implementation
@@ -26,15 +26,15 @@ final class TaxiService: Service {
     
     typealias action = ([Contract]?, Error?) -> Void
     
-    private var network: NetworkManager = ServiceNetworkManager()
+    private var network = ServiceNetworkManager()
     private var imageCache = ImageCache<String, UIImage>()
     
     private init(){ }
     
-    func getList(completion : @escaping action) {
+    func getList(completion : @escaping ([Contract]?, String?) -> Void) {
         
         DispatchQueue.global().async {
-            self.network.request { data, error in
+            self.network.getList { data, error in
                 DispatchQueue.main.async {
                     if data != nil {
                         completion(data, nil)
@@ -47,11 +47,10 @@ final class TaxiService: Service {
         }
     }
     
-    func getPhoto(by name: String, completion: @escaping (UIImage?, Error?) -> Void ) {
+    func getPhoto(by name: String, completion: @escaping (UIImage?, String?) -> Void ) {
         
         DispatchQueue.global().async {
-            
-            self.network.photoRequest(name: name) { [weak self] image, error in
+            self.network.getPhoto(by: name) { [weak self] image, error in
                 DispatchQueue.main.async {
                     
                     if let image = image {
@@ -62,10 +61,11 @@ final class TaxiService: Service {
                             completion(image, nil)
                         }
                     }
+                    
                     if error != nil {
                         completion(nil, error)
                     }
-                    
+
                 }
             }
             

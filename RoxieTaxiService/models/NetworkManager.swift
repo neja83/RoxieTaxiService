@@ -8,73 +8,84 @@
 import Foundation
 import UIKit
 
-// MARK: - protocol
-protocol NetworkManager {
-    var baseUrl: URL { get }
-    func request(completion: @escaping ([Contract]?, Error?) -> Void )
-    func photoRequest(name: String, completion: @escaping (UIImage?, Error?) -> Void)
-}
+class ServiceNetworkManager {
+    
+    enum Result<String> {
+        case success
+        case failure(String)
+    }
 
-// MARK: - implementation
-final class ServiceNetworkManager: NetworkManager {
-    
-    // MARK: - Types
-    typealias action = ([Contract]?, Error?) -> Void
-    typealias action2 = (UIImage?, Error?) -> Void
-    
-    // MARK: - private
-    private let session = URLSession.shared
-    
-    var baseUrl: URL {
-        guard let url = URL(string: "https://www.roxiemobile.ru/careers/test/orders.json") else {
-            fatalError()
-        }
-        return url
+    enum NetworkResponse: String {
+        case success
+        case failed = "Network ruquest failed."
     }
     
-    func request(completion: @escaping action) {
-        let session = URLSession.shared
+    private let route = Router<TaxiServiceApi>()
+    
+    public func getList(_ completion: @escaping ([ActiveContract]?, String?) -> Void) {
         
-        let task = session.dataTask(with: baseUrl) { data, response, error in
-            if let error = error {
-                completion(nil, NetworkManagerErorrs.RequestExeption(message: error.localizedDescription))
+        route.request(.getList) { [weak self] data, response, error in
+            
+            if error != nil {
+                completion(nil, "Network error")
             }
             
-            if let data = data {
-                do {
-                    let result: [ActiveContract]  = try DataParser.convert(data: data)
-                    completion(result, nil)
-                } catch(let error) {
-                    completion(nil, NetworkManagerErorrs.DataExeption(message: error.localizedDescription))
+            if let response = response as? HTTPURLResponse {
+                let result = self?.handleNetworkResponse(response)
+                
+                switch result {
+                case .success:
+                    guard let responseData = data else { completion(nil, "Not data"); return}
+                    
+                    do {
+                        let apiResponse: [ActiveContract]  = try DataParser.convert(data: responseData)
+                        completion(apiResponse, nil)
+                    } catch {
+                        completion(nil, "Can not parse server response")
+                    }
+                case .failure(let error):
+                    completion(nil, error)
+                case .none:
+                    fatalError()
                 }
             }
-            
         }
-        task.resume()
     }
     
-    func photoRequest(name: String, completion: @escaping action2) {
-        guard let url = URL(string: "https://www.roxiemobile.ru/careers/test/images/\(name)") else { fatalError() }
-        let session = URLSession.shared
+    public func getPhoto(by name: String, _ completion: @escaping (UIImage?, String?) -> Void) {
         
-        let task = session.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(nil, NetworkManagerErorrs.RequestExeption(message: error.localizedDescription))
+        route.request(.getImage(name: name)) { [weak self] data, response, error in
+            
+            if error != nil {
+                completion(nil, "Network error")
             }
             
-            if let data = data, let image = UIImage(data: data) {
-                completion(image, nil)
-            } else {
-                completion(nil, NetworkManagerErorrs.DataExeption(message: "UIImage create exeption"))
+            if let response = response as? HTTPURLResponse {
+                let result = self?.handleNetworkResponse(response)
+                
+                switch result {
+                case .success:
+                    guard let responseData = data else { completion(nil, "Not data"); return}
+                    
+                    if let image = UIImage(data: responseData) {
+                        completion(image, nil)
+                    } else {
+                        completion(nil, "UIImage create exeption")
+                    }
+                    
+                case .failure(let error): completion(nil, error)
+                case .none: fatalError()
+                }
             }
         }
-        
-        task.resume()
     }
     
-}
-
-enum NetworkManagerErorrs: Error {
-    case RequestExeption(message: String)
-    case DataExeption(message: String)
+    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
+        switch response.statusCode {
+        case 200...299: return .success
+        case 401...600: return .failure(NetworkResponse.failed.rawValue)
+        default:
+            return .failure(NetworkResponse.failed.rawValue)
+        }
+    }
 }

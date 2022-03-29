@@ -40,7 +40,7 @@ class ActiveContractList: UIViewController {
                 self?.tableView.reloadData()
             }
             if let error = error {
-                self?.showMessage(with: error.localizedDescription)
+                self?.showMessage(with: error)
             }
         }
     }
