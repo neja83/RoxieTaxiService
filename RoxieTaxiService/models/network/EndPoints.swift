@@ -15,6 +15,7 @@ protocol EndPointType {
     var path: String { get }
     var httpMethod: HTTPMethod { get }
     var httpTask: HTTPTask { get }
+    var cachingRequest: Bool { get }
 }
 
 // MARK: - implementation
@@ -47,6 +48,13 @@ extension TaxiServiceApi: EndPointType {
         switch(self){
         case .getList: return .request
         case .getImage: return .request
+        }
+    }
+    
+    var cachingRequest: Bool {
+        switch(self){
+        case .getList: return false
+        case .getImage: return true
         }
     }
 }

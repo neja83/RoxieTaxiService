@@ -27,7 +27,6 @@ final class TaxiService: Service {
     typealias action = ([Contract]?, Error?) -> Void
     
     private var network = ServiceNetworkManager()
-    private var imageCache = ImageCache<String, UIImage>()
     
     private init(){ }
     
@@ -50,16 +49,11 @@ final class TaxiService: Service {
     func getPhoto(by name: String, completion: @escaping (UIImage?, String?) -> Void ) {
         
         DispatchQueue.global().async {
-            self.network.getPhoto(by: name) { [weak self] image, error in
+            self.network.getPhoto(by: name) { image, error in
                 DispatchQueue.main.async {
                     
                     if let image = image {
-                        if let cached = self?.imageCache[name] {
-                            completion(cached, nil)
-                        } else  {
-                            self?.imageCache[name] = image
-                            completion(image, nil)
-                        }
+                       completion(image, nil)
                     }
                     
                     if error != nil {
